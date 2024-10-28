@@ -6,4 +6,14 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Gnarly.Data" Version="1.0.5" />
+      <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ChatNext.Application.Contract\ChatNext.Application.Contract.csproj" />
+      <ProjectReference Include="..\ChatNext.Domain\ChatNext.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

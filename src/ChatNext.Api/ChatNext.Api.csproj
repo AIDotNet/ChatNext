@@ -7,8 +7,15 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Gnarly" Version="1.0.5" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.10" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ChatNext.Application\ChatNext.Application.csproj" />
+      <ProjectReference Include="..\ChatNext.EntityFrameworkCore\ChatNext.EntityFrameworkCore.csproj" />
     </ItemGroup>
 
 </Project>

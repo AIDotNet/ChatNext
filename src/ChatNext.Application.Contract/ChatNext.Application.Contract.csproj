@@ -6,4 +6,13 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Users\Input\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\framework\ChatNext.Data\ChatNext.Data.csproj" />
+      <ProjectReference Include="..\ChatNext.Domain.Shared\ChatNext.Domain.Shared.csproj" />
+    </ItemGroup>
+
 </Project>

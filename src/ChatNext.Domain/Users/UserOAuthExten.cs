@@ -39,4 +39,12 @@ public class UserOAuthExtension : Entity<long>
         get => _providerKey;
         set => _providerKey = value ?? throw new ArgumentNullException(nameof(value));
     }
+    
+    private Dictionary<string,string> _extra = new Dictionary<string, string>();
+    
+    public Dictionary<string, string> Extra
+    {
+        get => _extra;
+        set => _extra = value ?? throw new ArgumentNullException(nameof(value));
+    }
 }

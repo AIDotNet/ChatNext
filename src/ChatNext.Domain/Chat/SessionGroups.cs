@@ -2,7 +2,7 @@
 
 namespace ChatNext.Domain.Chat;
 
-public class SessionGroups : FullAggregateRoot<Guid?>
+public class SessionGroups : FullAggregateRoot<Guid>
 {
     private string _name = null!;
 

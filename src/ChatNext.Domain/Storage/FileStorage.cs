@@ -2,7 +2,7 @@
 
 namespace ChatNext.Domain.Storage;
 
-public class Files : FullAggregateRoot<long>
+public class FileStorage : FullAggregateRoot<long>
 {
     private string _name = null!;
 
