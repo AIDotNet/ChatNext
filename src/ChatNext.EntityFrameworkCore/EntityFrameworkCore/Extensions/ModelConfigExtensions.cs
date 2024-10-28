@@ -47,6 +47,7 @@ public static class ModelConfigExtensions
         modelBuilder.Entity<UserOAuthExtension>(options =>
         {
             options.HasKey(x => x.Id);
+            options.Property(x => x.Id).ValueGeneratedOnAdd();
 
             options.Property(x => x.UserId).IsRequired();
 
@@ -122,6 +123,8 @@ public static class ModelConfigExtensions
         modelBuilder.Entity<Messages>(options =>
         {
             options.HasKey(x => x.Id);
+            
+            options.Property(x => x.Id).ValueGeneratedOnAdd();
 
             options.Property(x => x.Content).IsRequired();
 
@@ -145,6 +148,8 @@ public static class ModelConfigExtensions
         modelBuilder.Entity<Session>(options =>
         {
             options.HasKey(x => x.Id);
+            
+            options.Property(x => x.Id).ValueGeneratedOnAdd();
 
             options.Property(x => x.Title).IsRequired();
 

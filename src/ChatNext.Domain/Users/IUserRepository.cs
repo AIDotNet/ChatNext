@@ -2,7 +2,7 @@
 
 public interface IUserRepository
 {
-    Task<List<User>> GetListAsync(string keyword, int page, int pageSize);
+    Task<List<User>> GetListAsync(string? keyword, int page, int pageSize);
     
     Task<long> GetCountAsync(string keyword);
     
@@ -10,7 +10,7 @@ public interface IUserRepository
     
     Task<User?> GetByUsernameAsync(string username);
     
-    Task<User?> GetByEmailAsync(string email);
-    
     Task RemoveAsync(Guid id);
+    
+    Task UpdateAsync(User user);
 }

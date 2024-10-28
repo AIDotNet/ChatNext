@@ -20,15 +20,9 @@ public class Session : FullAggregateRoot<long>
         set => _pinned = value;
     }
 
-    private string _type;
+    public string? Type { get; set; }
 
-    public string Type
-    {
-        get => _type;
-        set => _type = value ?? throw new ArgumentNullException(nameof(value));
-    }
-
-    private Dictionary<string, object> _config = new Dictionary<string, object>();
+    private Dictionary<string, object> _config = new();
 
     public Dictionary<string, object> Config
     {

@@ -9,7 +9,7 @@ namespace ChatNext.Application.Users;
 
 public class UserService(IUserRepository userRepository, IMapper mapper) : IUserService, IScopeDependency
 {
-    public async Task<PagingResult<UserDto>> GetListAsync(string keyword, int page, int pageSize)
+    public async Task<PagingResult<UserDto>> GetListAsync(string? keyword, int page, int pageSize)
     {
         var result = await userRepository.GetListAsync(keyword, page, pageSize);
 

@@ -33,7 +33,7 @@ public static class ModelDataExtensions
 
         modelBuilder.Entity<SessionGroups>().HasData(group);
 
-        var session = new Session()
+        var session = new Session
         {
             Title = "Default",
             GroupId = group.Id,
@@ -43,6 +43,10 @@ public static class ModelDataExtensions
             Avatar = "https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/1.1.0/files/assets/1f92f.webp",
             Pinned = false,
             HistoryLimit = -1,
+            Id = 1,
+            Description = "Default",
+            Model = "gpt-4o",
+            Provider = "openai",
         };
 
         modelBuilder.Entity<Session>().HasData(session);

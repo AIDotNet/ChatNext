@@ -1,4 +1,5 @@
 ﻿using ChatNext.Data.Audit;
+using ChatNext.Data.Exceptions;
 using ChatNext.Data.Helper;
 using ChatNext.Domain.Shared;
 
@@ -83,5 +84,26 @@ public class User : FullAggregateRoot<Guid>
         PasswordSalt = Guid.NewGuid().ToString("N");
 
         Password = HashHelper.HashPassword(password, PasswordSalt);
+    }
+
+    public bool VerifyPassword(string password)
+    {
+        LastLoginTime = DateTime.Now;
+
+        var hash = HashHelper.HashPassword(password, PasswordSalt);
+
+        if (Password != hash)
+        {
+            return false;
+        }
+
+
+        return true;
+    }
+
+    public void UpdateLoginErrorCount()
+    {
+        LoginErrorCount++;
+        LastLoginErrorTime = DateTime.Now;
     }
 }

@@ -5,7 +5,7 @@ namespace ChatNext.EntityFrameworkCore.EntityFrameworkCore.Users;
 
 public class UserRepository(ChatNextDbContext context) : IUserRepository
 {
-    public Task<List<User>> GetListAsync(string keyword, int page, int pageSize)
+    public Task<List<User>> GetListAsync(string? keyword, int page, int pageSize)
     {
         var query = context.Users.AsQueryable();
 
@@ -36,17 +36,19 @@ public class UserRepository(ChatNextDbContext context) : IUserRepository
 
     public Task<User?> GetByUsernameAsync(string username)
     {
-        return context.Users.FirstOrDefaultAsync(x => x.Username == username);
-    }
-
-    public Task<User?> GetByEmailAsync(string email)
-    {
-        return context.Users.FirstOrDefaultAsync(x => x.Email == email);
+        return context.Users.FirstOrDefaultAsync(x => x.Username == username || x.Email == username);
     }
 
     public async Task RemoveAsync(Guid id)
     {
         await context.Users.Where(x => x.Id == id)
             .ExecuteDeleteAsync();
+    }
+
+    public Task UpdateAsync(User user)
+    {
+        context.Users.Update(user);
+
+        return context.SaveChangesAsync();
     }
 }

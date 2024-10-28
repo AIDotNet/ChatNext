@@ -9,6 +9,8 @@
     <ItemGroup>
       <PackageReference Include="Gnarly.Data" Version="1.0.5" />
       <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>

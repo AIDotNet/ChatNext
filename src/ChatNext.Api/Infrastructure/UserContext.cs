@@ -10,7 +10,7 @@ public class UserContext(IHttpContextAccessor httpContextAccessor) : IUserContex
     {
         get
         {
-            var userId = httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userId = httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.Sid)?.Value;
 
             return userId is null ? null : Guid.Parse(userId);
         }
