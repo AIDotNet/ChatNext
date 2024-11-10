@@ -9,7 +9,7 @@ public interface IChatService
     /// </summary>
     /// <param name="keyword"></param>
     /// <returns></returns>
-    Task<List<SessionGroupsDto>> GetSessionsAsync(string keyword);
+    Task<List<SessionGroupsDto>> GetSessionsAsync(string? keyword);
     
     /// <summary>
     /// 删除分组

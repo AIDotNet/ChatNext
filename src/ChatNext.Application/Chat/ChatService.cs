@@ -9,7 +9,7 @@ namespace ChatNext.Application.Chat;
 public class ChatService(ISessionGroupRepository sessionGroupRepository, IMapper mapper)
     : IChatService, IScopeDependency
 {
-    public async Task<List<SessionGroupsDto>> GetSessionsAsync(string keyword)
+    public async Task<List<SessionGroupsDto>> GetSessionsAsync(string? keyword)
     {
         var result = await sessionGroupRepository.GetSessionsAsync(keyword);
 

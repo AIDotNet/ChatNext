@@ -12,7 +12,7 @@ public static class ChatApis
             .WithTags("聊天服务")
             .AddEndpointFilter<ResultFilter>();
 
-        chat.MapGet("/sessions", (IChatService apis, string keyword) => apis.GetSessionsAsync(keyword))
+        chat.MapGet("/sessions", (IChatService apis, string? keyword) => apis.GetSessionsAsync(keyword))
             .WithName("获取会话列表")
             .WithOpenApi((operation =>
             {

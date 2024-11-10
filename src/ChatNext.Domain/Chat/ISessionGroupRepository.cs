@@ -6,7 +6,7 @@ public interface ISessionGroupRepository
     /// 获取会话列表
     /// </summary>
     /// <returns></returns>
-    Task<List<SessionGroups>> GetSessionsAsync(string keyword);
+    Task<List<SessionGroups>> GetSessionsAsync(string? keyword);
 
     /// <summary>
     /// 删除分组

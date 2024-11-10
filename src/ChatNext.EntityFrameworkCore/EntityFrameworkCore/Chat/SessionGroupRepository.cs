@@ -5,7 +5,7 @@ namespace ChatNext.EntityFrameworkCore.EntityFrameworkCore.Chat;
 
 public class SessionGroupRepository(ChatNextDbContext dbContext) : ISessionGroupRepository
 {
-    public async Task<List<SessionGroups>> GetSessionsAsync(string keyword)
+    public async Task<List<SessionGroups>> GetSessionsAsync(string? keyword)
     {
         var query = dbContext.SessionGroups.AsQueryable();
 
