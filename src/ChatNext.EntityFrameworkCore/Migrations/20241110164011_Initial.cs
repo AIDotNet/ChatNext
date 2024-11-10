@@ -155,6 +155,8 @@ namespace ChatNext.EntityFrameworkCore.Migrations
                     loginerrorcount = table.Column<int>(type: "INTEGER", nullable: false),
                     lastloginerrortime = table.Column<DateTime>(type: "TEXT", nullable: true),
                     lastlogintime = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    latestname = table.Column<string>(type: "TEXT", nullable: false),
+                    firstname = table.Column<string>(type: "TEXT", nullable: false),
                     createdat = table.Column<DateTime>(type: "TEXT", nullable: false),
                     creator = table.Column<Guid>(type: "TEXT", nullable: true),
                     updatedat = table.Column<DateTime>(type: "TEXT", nullable: true),
@@ -168,17 +170,17 @@ namespace ChatNext.EntityFrameworkCore.Migrations
             migrationBuilder.InsertData(
                 table: "sessiongroups",
                 columns: new[] { "id", "createdat", "creator", "isdefault", "modifier", "name", "sort", "updatedat" },
-                values: new object[] { new Guid("dfd2dad1-7331-4491-94f4-ff017aa2dcb5"), new DateTime(2024, 10, 29, 0, 26, 28, 800, DateTimeKind.Local).AddTicks(6269), new Guid("8b2b702b-fd76-4a47-9338-4c949f8df931"), false, null, "Default", 0, null });
+                values: new object[] { new Guid("6205d3b7-ef0c-4734-9dc7-38ad18b7e964"), new DateTime(2024, 11, 11, 0, 40, 10, 885, DateTimeKind.Local).AddTicks(8662), new Guid("745c2272-c49e-439c-b80b-926d21fc50c4"), false, null, "Default", 0, null });
 
             migrationBuilder.InsertData(
                 table: "sessions",
                 columns: new[] { "id", "avatar", "config", "createdat", "creator", "description", "groupid", "historylimit", "model", "modifier", "pinned", "plugins", "presencepenalty", "provider", "systemrole", "tags", "temperature", "title", "topp", "type", "updatedat" },
-                values: new object[] { 1L, "https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/1.1.0/files/assets/1f92f.webp", "{\"$id\":\"1\"}", new DateTime(2024, 10, 29, 0, 26, 28, 800, DateTimeKind.Local).AddTicks(6300), new Guid("8b2b702b-fd76-4a47-9338-4c949f8df931"), "Default", new Guid("dfd2dad1-7331-4491-94f4-ff017aa2dcb5"), -1, "gpt-4o", null, false, "[]", 0f, "openai", "", "[]", 1f, "Default", 1f, null, null });
+                values: new object[] { 1L, "https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/1.1.0/files/assets/1f92f.webp", "{\"$id\":\"1\"}", new DateTime(2024, 11, 11, 0, 40, 10, 885, DateTimeKind.Local).AddTicks(8691), new Guid("745c2272-c49e-439c-b80b-926d21fc50c4"), "Default", new Guid("6205d3b7-ef0c-4734-9dc7-38ad18b7e964"), -1, "gpt-4o", null, false, "[]", 0f, "openai", "", "[]", 1f, "Default", 1f, null, null });
 
             migrationBuilder.InsertData(
                 table: "users",
-                columns: new[] { "id", "avatar", "createdat", "creator", "email", "lastloginerrortime", "lastlogintime", "loginerrorcount", "modifier", "password", "passwordsalt", "state", "updatedat", "username" },
-                values: new object[] { new Guid("8b2b702b-fd76-4a47-9338-4c949f8df931"), "https://chat-preview.lobehub.com/icons/icon-192x192.png", new DateTime(2024, 10, 29, 0, 26, 28, 800, DateTimeKind.Local).AddTicks(5740), null, "239573049@qq.com", null, null, 0, null, "426f35374cf47b73ea8925c0cb602ca109a32d4a181ac043ee02d230ee59c14d", "2f819912da0f444b8caade6a3d12c967", (byte)1, null, "admin" });
+                columns: new[] { "id", "avatar", "createdat", "creator", "email", "firstname", "lastloginerrortime", "lastlogintime", "latestname", "loginerrorcount", "modifier", "password", "passwordsalt", "state", "updatedat", "username" },
+                values: new object[] { new Guid("745c2272-c49e-439c-b80b-926d21fc50c4"), "https://chat-preview.lobehub.com/icons/icon-192x192.png", new DateTime(2024, 11, 11, 0, 40, 10, 885, DateTimeKind.Local).AddTicks(7944), null, "239573049@qq.com", "Admin", null, null, "Admin", 0, null, "81c75bd7a12542812272bd2b6d3096f1962d66b10588e910bd2bf80a45ff30ec", "e9868438e42647a88ecb528d5da25faa", (byte)1, null, "admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_filestorages_createdat",

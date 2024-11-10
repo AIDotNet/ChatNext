@@ -3,7 +3,6 @@ import { LayoutProps } from "../type";
 
 
 const Layout = memo<LayoutProps>(({ children }) => {
-
     return (<>
         {children}
     </>)

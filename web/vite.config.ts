@@ -11,4 +11,12 @@ export default defineConfig({
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5194',
+        changeOrigin: true,
+      }
+    }
+  }
 })

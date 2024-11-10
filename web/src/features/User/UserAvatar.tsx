@@ -7,7 +7,7 @@ import { useUserStore } from '@/store/user';
 import { authSelectors, userProfileSelectors } from '@/store/user/selectors';
 
 const useStyles = createStyles(({ css, token }) => ({
-    clickable: css`
+  clickable: css`
     position: relative;
     transition: all 200ms ease-out 0s;
 
@@ -39,33 +39,33 @@ const useStyles = createStyles(({ css, token }) => ({
 }));
 
 export interface UserAvatarProps extends AvatarProps {
-    clickable?: boolean;
+  clickable?: boolean;
 }
 
 const UserAvatar = forwardRef<HTMLDivElement, UserAvatarProps>(
-    ({ size = 40, background, clickable, className, style, ...rest }, ref) => {
-        const { styles, cx } = useStyles();
-        const [avatar, username] = useUserStore((s) => [
-            userProfileSelectors.userAvatar(s),
-            userProfileSelectors.username(s),
-        ]);
+  ({ size = 40, background, clickable, className, style, ...rest }, ref) => {
+    const { styles, cx } = useStyles();
+    const [avatar, username] = useUserStore((s) => [
+      userProfileSelectors.userAvatar(s),
+      userProfileSelectors.username(s),
+    ]);
 
-        const isSignedIn = useUserStore(authSelectors.isLogin);
+    const isSignedIn = useUserStore(authSelectors.isLogin);
 
-        return (
-            <Avatar
-                alt={isSignedIn ? (username as string) : 'TokenChat'}
-                avatar={isSignedIn ? avatar || DEFAULT_USER_AVATAR_URL : DEFAULT_USER_AVATAR_URL}
-                background={isSignedIn && avatar ? background : undefined}
-                className={cx(clickable && styles.clickable, className)}
-                ref={ref}
-                size={size}
-                style={{ flex: 'none', ...style }}
-                unoptimized
-                {...rest}
-            />
-        );
-    },
+    return (
+      <Avatar
+        alt={isSignedIn ? (username as string) : 'TokenChat'}
+        avatar={isSignedIn ? avatar || DEFAULT_USER_AVATAR_URL : DEFAULT_USER_AVATAR_URL}
+        background={isSignedIn && avatar ? background : undefined}
+        className={cx(clickable && styles.clickable, className)}
+        ref={ref}
+        size={size}
+        style={{ flex: 'none', ...style }}
+        unoptimized
+        {...rest}
+      />
+    );
+  },
 );
 
 UserAvatar.displayName = 'UserAvatar';

@@ -28,4 +28,5 @@ public class SessionGroups : FullAggregateRoot<Guid>
         set => _isDefault = value;
     }
     
+    public List<Session> Sessions { get; } = new();
 }

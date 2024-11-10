@@ -5,7 +5,7 @@ export interface SessionState {
      * @title 当前活动的会话
      * @description 当前正在编辑或查看的会话
      */
-    activeId: string;
+    activeId: number;
     defaultSessions: LobeAgentSession[];
     isSearching: boolean;
     isSessionsFirstFetchFinished: boolean;
@@ -20,7 +20,7 @@ export interface SessionState {
 }
 
 export const initialSessionState: SessionState = {
-    activeId: 'inbox',
+    activeId: -1,
     defaultSessions: [],
     isSearching: false,
     isSessionsFirstFetchFinished: false,

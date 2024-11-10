@@ -79,6 +79,26 @@ public class User : FullAggregateRoot<Guid>
         set => _lastLoginTime = value;
     }
 
+    private string _latestName;
+
+    public string LatestName
+    {
+        get => _latestName;
+        set => _latestName = value ?? throw new ArgumentNullException(nameof(value));
+    }
+
+    private string firstName;
+
+    public string FirstName
+    {
+        get => firstName;
+        set => firstName = value ?? throw new ArgumentNullException(nameof(value));
+    }
+
+    private string fullName;
+
+    public string FullName => $"{FirstName} {LatestName}";
+
     public void SetPassword(string password)
     {
         PasswordSalt = Guid.NewGuid().ToString("N");

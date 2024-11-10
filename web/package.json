@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://github.com/AIDotNet/ChatNext",
+  "bugs": {
+    "url": "https://ai-dotnet.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -11,11 +14,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lobehub/icons": "^1.37.1",
     "@lobehub/ui": "^1.152.0",
     "node": "^23.1.0",
+    "nuqs": "^2.1.1",
+    "pwa-install-handler": "^2.6.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
+    "styled-components": "^6.1.13",
     "ua-parser-js": "^1.0.39",
     "utility-types": "^3.11.0",
     "zod": "^3.23.8",
@@ -26,6 +33,7 @@
     "@eslint/js": "^9.13.0",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
+    "@types/ua-parser-js": "^0.7.39",
     "@vitejs/plugin-react": "^4.3.3",
     "eslint": "^9.13.0",
     "eslint-plugin-react-hooks": "^5.0.0",

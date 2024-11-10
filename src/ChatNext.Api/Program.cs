@@ -103,7 +103,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapAuthApis();
-app.MapUserApis();
+app.MapAuthApis()
+    .MapUserApis()
+    .MapChatApis();
 
 app.Run();

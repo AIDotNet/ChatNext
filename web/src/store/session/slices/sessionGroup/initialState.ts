@@ -7,6 +7,8 @@ export interface SessionGroupState {
 }
 
 export const initSessionGroupState: SessionGroupState = {
-    customSessionGroups: [],
-    sessionGroups: [],
+    customSessionGroups: [
+    ],
+    sessionGroups: [
+    ],
 };

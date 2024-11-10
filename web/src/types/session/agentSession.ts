@@ -17,7 +17,7 @@ export interface LobeAgentSession {
     model: string;
     tags?: string[];
     updatedAt: Date;
-    id: number;
+    id: number | null;
     groupId: string;
     pinned: boolean;
     type: string | null;
@@ -32,6 +32,10 @@ export interface LobeAgentSession {
     presencePenalty: number;
     historyLimit: number;
     plugins: string[];
+}
+
+export interface LobeAgentSettings {
+    meta: MetaData;
 }
 
 export type LobeSessions = LobeAgentSession[];

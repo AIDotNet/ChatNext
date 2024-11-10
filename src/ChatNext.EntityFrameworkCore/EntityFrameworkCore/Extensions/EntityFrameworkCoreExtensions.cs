@@ -1,4 +1,6 @@
-﻿using ChatNext.Domain.Users;
+﻿using ChatNext.Domain.Chat;
+using ChatNext.Domain.Users;
+using ChatNext.EntityFrameworkCore.EntityFrameworkCore.Chat;
 using ChatNext.EntityFrameworkCore.EntityFrameworkCore.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +15,7 @@ public static class EntityFrameworkCoreExtensions
         services.AddDbContext<ChatNextDbContext>(optionsAction);
 
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<ISessionGroupRepository, SessionGroupRepository>();
         
         return services;
     }

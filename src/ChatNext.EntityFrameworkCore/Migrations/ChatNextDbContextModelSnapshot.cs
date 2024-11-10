@@ -258,10 +258,10 @@ namespace ChatNext.EntityFrameworkCore.Migrations
                             Id = 1L,
                             Avatar = "https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/1.1.0/files/assets/1f92f.webp",
                             Config = "{\"$id\":\"1\"}",
-                            CreatedAt = new DateTime(2024, 10, 29, 0, 26, 28, 800, DateTimeKind.Local).AddTicks(6300),
-                            Creator = new Guid("8b2b702b-fd76-4a47-9338-4c949f8df931"),
+                            CreatedAt = new DateTime(2024, 11, 11, 0, 40, 10, 885, DateTimeKind.Local).AddTicks(8691),
+                            Creator = new Guid("745c2272-c49e-439c-b80b-926d21fc50c4"),
                             Description = "Default",
-                            GroupId = new Guid("dfd2dad1-7331-4491-94f4-ff017aa2dcb5"),
+                            GroupId = new Guid("6205d3b7-ef0c-4734-9dc7-38ad18b7e964"),
                             HistoryLimit = -1,
                             Model = "gpt-4o",
                             Pinned = false,
@@ -323,9 +323,9 @@ namespace ChatNext.EntityFrameworkCore.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("dfd2dad1-7331-4491-94f4-ff017aa2dcb5"),
-                            CreatedAt = new DateTime(2024, 10, 29, 0, 26, 28, 800, DateTimeKind.Local).AddTicks(6269),
-                            Creator = new Guid("8b2b702b-fd76-4a47-9338-4c949f8df931"),
+                            Id = new Guid("6205d3b7-ef0c-4734-9dc7-38ad18b7e964"),
+                            CreatedAt = new DateTime(2024, 11, 11, 0, 40, 10, 885, DateTimeKind.Local).AddTicks(8662),
+                            Creator = new Guid("745c2272-c49e-439c-b80b-926d21fc50c4"),
                             IsDefault = false,
                             Name = "Default",
                             Sort = 0
@@ -415,6 +415,11 @@ namespace ChatNext.EntityFrameworkCore.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("email");
 
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("firstname");
+
                     b.Property<DateTime?>("LastLoginErrorTime")
                         .HasColumnType("TEXT")
                         .HasColumnName("lastloginerrortime");
@@ -422,6 +427,11 @@ namespace ChatNext.EntityFrameworkCore.Migrations
                     b.Property<DateTime?>("LastLoginTime")
                         .HasColumnType("TEXT")
                         .HasColumnName("lastlogintime");
+
+                    b.Property<string>("LatestName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("latestname");
 
                     b.Property<int>("LoginErrorCount")
                         .HasColumnType("INTEGER")
@@ -469,13 +479,15 @@ namespace ChatNext.EntityFrameworkCore.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8b2b702b-fd76-4a47-9338-4c949f8df931"),
+                            Id = new Guid("745c2272-c49e-439c-b80b-926d21fc50c4"),
                             Avatar = "https://chat-preview.lobehub.com/icons/icon-192x192.png",
-                            CreatedAt = new DateTime(2024, 10, 29, 0, 26, 28, 800, DateTimeKind.Local).AddTicks(5740),
+                            CreatedAt = new DateTime(2024, 11, 11, 0, 40, 10, 885, DateTimeKind.Local).AddTicks(7944),
                             Email = "239573049@qq.com",
+                            FirstName = "Admin",
+                            LatestName = "Admin",
                             LoginErrorCount = 0,
-                            Password = "426f35374cf47b73ea8925c0cb602ca109a32d4a181ac043ee02d230ee59c14d",
-                            PasswordSalt = "2f819912da0f444b8caade6a3d12c967",
+                            Password = "81c75bd7a12542812272bd2b6d3096f1962d66b10588e910bd2bf80a45ff30ec",
+                            PasswordSalt = "e9868438e42647a88ecb528d5da25faa",
                             State = (byte)1,
                             Username = "admin"
                         });

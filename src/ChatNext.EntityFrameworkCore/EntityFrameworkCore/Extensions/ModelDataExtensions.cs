@@ -16,6 +16,8 @@ public static class ModelDataExtensions
             Email = "239573049@qq.com",
             Avatar = "https://chat-preview.lobehub.com/icons/icon-192x192.png",
             State = UserState.Enabled,
+            FirstName = "Admin",
+            LatestName = "Admin",
             CreatedAt = DateTime.Now
         };
 
